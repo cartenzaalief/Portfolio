@@ -13,7 +13,7 @@ const Menu = (props) => {
             <Text color="white" fontWeight="bold" cursor="pointer" _hover={{ color: "grey" }} transition="0.3s" onClick={() => props.data.onClick("contact")}>
                 Contact
             </Text>
-            <Link href="https://drive.google.com/file/d/1wUBSWBzkcg41FRP2F_eDPHysqScXkq1K/view?usp=sharing" isExternal _hover={{ textDecoration: "none" }}>
+            <Link href="https://drive.google.com/file/d/1DVex6hmwVJW3tKyKZN5W6rZEUQzJqPnD/view?usp=sharing" isExternal _hover={{ textDecoration: "none" }}>
                 <Text color="white" fontWeight="bold" _hover={{ color: "grey" }} transition="0.3s">
                     Resume
                 </Text>

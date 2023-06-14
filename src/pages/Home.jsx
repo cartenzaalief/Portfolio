@@ -1,45 +1,62 @@
-import { Box, Flex, Grid } from "@chakra-ui/react";
-import Background from "../assets/images/bg.gif";
-import Name from "../components/Name";
-import Navigation from "../components/Navigation";
+import { Box, Fade, Flex, Grid, GridItem, Image, useDisclosure } from "@chakra-ui/react";
 import About from "../components/About";
-import Projects from "../components/Projects";
-import { useState } from "react";
 import Contact from "../components/Contact";
+import Skill from "../components/Skill";
+import Projects from "../components/Projects";
+import Logo from "../assets/images/logo.png"
+import StayComfy from "../components/StayComfy";
+import { useState } from "react";
+import KTNG from "../components/KTNG";
 
 const Home = () => {
-    const [navigation, setNavigation] = useState("home");
+    const { isOpen: isOpenHome, onToggle: onToggleHome } = useDisclosure()
+    const { isOpen: isOpenStayComfy, onToggle: onToggleStayComfy } = useDisclosure()
+
+    const [content, setContent] = useState("Home")
 
     const showContent = () => {
-        if (navigation === "home") {
-            return (
-                <About />
-            )
-        } else if (navigation === "projects") {
-            return (
-                <Projects />
-            )
-        } else if (navigation === "contact") {
-            return (
-                <Contact />
-            )
+        switch (content) {
+            case "Home":
+                return (
+                    <About />
+                )
+            case "StayComfy":
+                return (
+                    <StayComfy />
+                )
+            case "KTNG":
+                return (
+                    <KTNG />
+                )
+            default:
+                return (
+                    <About />
+                )
         }
     }
 
     return (
-        <Box h="100vh" w="100vw" bgImage={Background} bgPosition="center" p={8}>
-            <Box h="full" w="full" border="2px" borderColor="white" p={8}>
-                <Grid h="full" templateColumns="repeat(2, 1fr)">
-                    <Flex h="full" flexDirection="column" justifyContent="space-between">
-                        <Name />
-                        <Navigation data={{ onClick: (value) => setNavigation(value) }} />
+        <Flex minH="100vh" w="100vw" bgColor="#242424" justifyContent="center">
+            <Box minH="100vh" maxW="1280px" bgGradient="linear(to-t, orange.100, purple.300)" _hover={{ bgGradient: "linear(to-b, orange.100, purple.300)" }} pt={4} ps={4}>
+                <Box h="full" w="full" p={8} bgColor="#242424">
+                    <Flex flexDirection={["column", null, "row"]} gap={[8, null, 0]} justifyContent="space-between" h="10%">
+                        <Image src={Logo} boxSize={10} cursor="pointer" _hover={{ transform: "scale(1.2)" }} transitionDuration="0.2s" onClick={() => setContent("Home")} />
+                        <Contact />
                     </Flex>
-                    <Flex h="full" flexDirection="column" justifyContent="flex-end" alignItems="flex-end">
-                        {showContent()}
+                    <Grid templateColumns={["repeat(1, 1fr)", null, "repeat(3, 1fr)"]} h={["", null, "80%"]} gap={[8, null, 24]}>
+                        <GridItem colSpan={[1, null, 2]} mt={16}>
+                            {showContent()}
+                        </GridItem>
+                        <GridItem colSpan={1}>
+                            <Projects data={{ onClickStayComfy: () => setContent("StayComfy"), onClickKTNG: () => setContent("KTNG") }} />
+                        </GridItem>
+                    </Grid>
+                    <Flex alignItems="flex-end" h="10%">
+                        <Skill />
                     </Flex>
-                </Grid>
+                </Box>
             </Box>
-        </Box>
+        </Flex>
     )
 }
 

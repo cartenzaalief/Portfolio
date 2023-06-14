@@ -1,23 +1,22 @@
-import { Box, Flex, Icon, Link, Text } from "@chakra-ui/react";
-import { FiExternalLink } from "react-icons/fi";
-import { AiFillGithub } from "react-icons/ai";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
-const Projects = () => {
+const Projects = (props) => {
     return (
-        <Box>
-            <Flex gap={4} alignItems="flex-end">
-                <Text color="white" fontWeight="bold">May, 2023</Text>
-                <Text color="white" fontSize="6xl" fontWeight="hairline">Stay Comfy</Text>
-                <Flex flexDirection="column" gap={2}>
-                    <Link href="https://jcwdol00803.purwadhikabootcamp.com/" isExternal>
-                        <Icon as={FiExternalLink} color="white" boxSize={6} _hover={{ color: "grey" }} transition="0.3s" />
-                    </Link>
-                    <Link href="https://github.com/purwadhikafullstack/JCWDOL00803" isExternal>
-                        <Icon as={AiFillGithub} color="white" boxSize={6} _hover={{ color: "grey" }} transition="0.3s" />
-                    </Link>
-                </Flex>
-            </Flex>
-        </Box>
+        <Flex flexDirection="column" justifyContent={["flex-start", null, "flex-end"]} h="full">
+            <Text color="white" fontSize="3xl" fontWeight="thin" cursor="default">Projects</Text>
+            <Box bgGradient="linear(to-br, orange.100, purple.300)" _hover={{ bgGradient: "linear(to-tl, orange.100, purple.300)" }} pt="1px" ps="1px" borderTopStartRadius={8} mt={4}>
+                <Box bgColor="#242424" borderTopStartRadius={8} p={6}>
+                    <Flex flexDirection="column" w="max-content" gap={1} cursor="pointer" role="group" onClick={props.data.onClickStayComfy}>
+                        <Text color="white" fontWeight="thin" _groupHover={{ letterSpacing: "wider" }} transitionDuration="0.3s">Stay Comfy</Text>
+                        <Box h="1px" bgGradient="linear(to-r, orange.100, purple.300)" _groupHover={{ bgGradient: "linear(to-t, orange.100, purple.300)" }}></Box>
+                    </Flex>
+                    <Flex mt={6} flexDirection="column" w="max-content" gap={1} cursor="pointer" role="group" onClick={props.data.onClickKTNG}>
+                        <Text color="white" fontWeight="thin" _groupHover={{ letterSpacing: "wider" }} transitionDuration="0.3s">KT&G Online Shop</Text>
+                        <Box h="1px" bgGradient="linear(to-r, orange.100, purple.300)" _groupHover={{ bgGradient: "linear(to-t, orange.100, purple.300)" }}></Box>
+                    </Flex>
+                </Box>
+            </Box>
+        </Flex>
     )
 }
 
