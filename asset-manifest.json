@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/portfolio/static/js/main.6ed6c1d0.js",
+    "main.css": "/portfolio/static/css/main.506ad80b.css",
+    "main.js": "/portfolio/static/js/main.f1c7d667.js",
     "static/js/787.87b2cbce.chunk.js": "/portfolio/static/js/787.87b2cbce.chunk.js",
-    "static/media/bg.gif": "/portfolio/static/media/bg.4e5a310943f941936967.gif",
+    "static/media/montserrat-latin-wght-normal.woff2": "/portfolio/static/media/montserrat-latin-wght-normal.b66f2d18f66f15c3ac56.woff2",
+    "static/media/montserrat-latin-ext-wght-normal.woff2": "/portfolio/static/media/montserrat-latin-ext-wght-normal.9f73369162c4382215d4.woff2",
+    "static/media/montserrat-cyrillic-ext-wght-normal.woff2": "/portfolio/static/media/montserrat-cyrillic-ext-wght-normal.639b3c91831427d83cd3.woff2",
+    "static/media/montserrat-cyrillic-wght-normal.woff2": "/portfolio/static/media/montserrat-cyrillic-wght-normal.f41a9bc7688bda1e8450.woff2",
+    "static/media/logo.png": "/portfolio/static/media/logo.69ea8dda74957c629882.png",
+    "static/media/montserrat-vietnamese-wght-normal.woff2": "/portfolio/static/media/montserrat-vietnamese-wght-normal.05f01253eba3626ef33d.woff2",
     "index.html": "/portfolio/index.html",
-    "main.e6c13ad2.css.map": "/portfolio/static/css/main.e6c13ad2.css.map",
-    "main.6ed6c1d0.js.map": "/portfolio/static/js/main.6ed6c1d0.js.map",
+    "main.506ad80b.css.map": "/portfolio/static/css/main.506ad80b.css.map",
+    "main.f1c7d667.js.map": "/portfolio/static/js/main.f1c7d667.js.map",
     "787.87b2cbce.chunk.js.map": "/portfolio/static/js/787.87b2cbce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.6ed6c1d0.js"
+    "static/css/main.506ad80b.css",
+    "static/js/main.f1c7d667.js"
   ]
 }
