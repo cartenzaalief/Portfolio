@@ -1,4 +1,4 @@
-import { Box, Fade, Flex, Grid, GridItem, Image, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Image } from "@chakra-ui/react";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Skill from "../components/Skill";
@@ -6,12 +6,8 @@ import Projects from "../components/Projects";
 import Logo from "../assets/images/logo.png"
 import StayComfy from "../components/StayComfy";
 import { useState } from "react";
-import KTNG from "../components/KTNG";
 
 const Home = () => {
-    const { isOpen: isOpenHome, onToggle: onToggleHome } = useDisclosure()
-    const { isOpen: isOpenStayComfy, onToggle: onToggleStayComfy } = useDisclosure()
-
     const [content, setContent] = useState("Home")
 
     const showContent = () => {
@@ -23,10 +19,6 @@ const Home = () => {
             case "StayComfy":
                 return (
                     <StayComfy />
-                )
-            case "KTNG":
-                return (
-                    <KTNG />
                 )
             default:
                 return (
@@ -48,7 +40,7 @@ const Home = () => {
                             {showContent()}
                         </GridItem>
                         <GridItem colSpan={1}>
-                            <Projects data={{ onClickStayComfy: () => setContent("StayComfy"), onClickKTNG: () => setContent("KTNG") }} />
+                            <Projects data={{ onClickStayComfy: () => setContent("StayComfy") }} />
                         </GridItem>
                     </Grid>
                     <Flex alignItems="flex-end" h="10%">

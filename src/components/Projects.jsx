@@ -10,10 +10,6 @@ const Projects = (props) => {
                         <Text color="white" fontWeight="thin" _groupHover={{ letterSpacing: "wider" }} transitionDuration="0.3s">Stay Comfy</Text>
                         <Box h="1px" bgGradient="linear(to-r, orange.100, purple.300)" _groupHover={{ bgGradient: "linear(to-t, orange.100, purple.300)" }}></Box>
                     </Flex>
-                    <Flex mt={6} flexDirection="column" w="max-content" gap={1} cursor="pointer" role="group" onClick={props.data.onClickKTNG}>
-                        <Text color="white" fontWeight="thin" _groupHover={{ letterSpacing: "wider" }} transitionDuration="0.3s">KT&G Online Shop</Text>
-                        <Box h="1px" bgGradient="linear(to-r, orange.100, purple.300)" _groupHover={{ bgGradient: "linear(to-t, orange.100, purple.300)" }}></Box>
-                    </Flex>
                 </Box>
             </Box>
         </Flex>
